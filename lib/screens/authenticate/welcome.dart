@@ -1,34 +1,38 @@
-
-import 'package:findmyschool_admin/screens/login.dart';
 import 'package:findmyschool_admin/theme/text.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../theme/colors.dart';
+import '../../theme/colors.dart';
+import '../wrapper.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Future.delayed(Duration(milliseconds: 2500), () {
+    //   Navigator.pushReplacement(
+    //       context,
+    //       PageTransition(
+    //           type: PageTransitionType.fade,
+    //           duration: Duration(milliseconds: 300),
+    //           child: Wrapper()));
+    // });
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    //double width = MediaQuery.of(context).size.width;
+    //
+    //
 
     return Scaffold(
       body: Container(
-
-
-        // decoration: BoxDecoration(
-        //   image: DecorationImage(
-        //     image: AssetImage('assets/images/welcome.png'),
-        //     fit: BoxFit.cover,
-        //   ),
-        // ),
-
-        //color: primaryColor,
-        // decoration: new BoxDecoration(
-        //   borderRadius: new BorderRadius.circular(16.0),
-        //   color: Colors.green,
-        // ),
-
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -39,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
             Column(
               children: [
                 SizedBox(
-                  height: height* 0.1,
+                  height: height * 0.1,
                 ),
                 Text(
                   "Welcome To",
@@ -60,11 +64,9 @@ class WelcomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
-
                 SizedBox(
-                  height: height* 0.01,
+                  height: height * 0.01,
                 ),
-
                 Text(
                   "Admin",
                   style: TextStyle(
@@ -74,19 +76,19 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.white),
                 ),
                 SizedBox(
-                  height: height* 0.55,
+                  height: height * 0.55,
                 ),
                 RaisedButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         PageTransition(
                             type: PageTransitionType.fade,
                             duration: Duration(milliseconds: 300),
-                            child: LoginScreen()));
+                            child: Wrapper()));
                   },
                   child: Text(
-                    "Login to Admin Dashboard",
+                    "Get Started",
                     style: ButtonTextStyle,
                   ),
                   elevation: 2.0,
@@ -96,23 +98,20 @@ class WelcomeScreen extends StatelessWidget {
                   splashColor: Colors.blue[200],
                   hoverElevation: 8.0,
                   hoverColor: Colors.green,
-                  padding: EdgeInsets.only(left: 35.0, right: 35.0, top: 10.0, bottom: 10.0),
+                  padding: EdgeInsets.only(
+                      left: 35.0, right: 35.0, top: 10.0, bottom: 10.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
                 ),
                 SizedBox(
-                  height: height* 0.04,
+                  height: height * 0.04,
                 ),
-
               ],
             ),
           ],
         ),
-
-
       ),
-
     );
   }
 }

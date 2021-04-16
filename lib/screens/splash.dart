@@ -1,40 +1,28 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:findmyschool_admin/screens/welcome.dart';
+import 'package:findmyschool_admin/screens/authenticate/welcome.dart';
+
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatefulWidget {
-
-
-
-
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-
 class _SplashScreenState extends State<SplashScreen> {
-
-
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     Future.delayed(Duration(milliseconds: 2500), () {
       Navigator.pushReplacement(
           context,
-
-              PageTransition(
+          PageTransition(
               type: PageTransitionType.fade,
               duration: Duration(milliseconds: 300),
-              child: WelcomeScreen())
-              );
+              child: WelcomeScreen()));
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
