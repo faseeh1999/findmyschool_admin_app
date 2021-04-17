@@ -168,34 +168,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               padding: buttonPadding,
                             ),
                             SizedBox(height: size.height * 0.03),
-
-                            // RaisedButton.icon(
-                            //   elevation: 3.0,
-                            //   onPressed: () async {
-                            //     setState(() {
-                            //       isLoading = true;
-                            //     });
-                            //     dynamic result = await _auth.signInAnon();
-                            //     if (result == null) {
-                            //       setState(() {
-                            //         isLoading = false;
-                            //       });
-                            //     }
-                            //   },
-                            //   shape: buttonShape,
-                            //   label: Text(
-                            //     'Login Anonymously',
-                            //     style: ButtonTextStyle,
-                            //   ),
-                            //   icon: Icon(
-                            //     Icons.login_outlined,
-                            //     color: Colors.white,
-                            //   ),
-                            //   textColor: Colors.white,
-                            //   splashColor: Colors.blueAccent,
-                            //   color: buttonColor,
-                            //   padding: buttonPadding,
-                            // ),
                             SizedBox(height: size.height * 0.01),
                             SizedBox(height: size.height * 0.03),
                           ],
